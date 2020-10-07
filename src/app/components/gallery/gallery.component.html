@@ -1,0 +1,21 @@
+<div class="main">
+  <mat-card class="mat-elevation-z4 gallery">
+    <mat-card-header>
+      <mat-card-title>Fotos de {{ galleryName }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <span class="image">
+        <img [src]="photos[actualPhoto]" />
+      </span>
+      <mat-card-subtitle
+        >Foto: {{ actualPhoto + 1 }} de: {{ photos.length }}</mat-card-subtitle
+      >
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="changePhoto(0)">|<</button>
+      <button mat-button (click)="changePhoto(actualPhoto - 1)"><</button>
+      <button mat-button (click)="changePhoto(actualPhoto + 1)">></button>
+      <button mat-button (click)="changePhoto(photos.length - 1)">>|</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
